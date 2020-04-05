@@ -30,10 +30,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'kanban:users_detail' request.user.pk %}">{{ request.user.username }}</a>
                 </li>
-                <span class="navbar-text">
-                  こんにちは {{ request.user.username }} さん
-                </span>
-                
                 
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
