@@ -20,9 +20,14 @@ def index(request):
     # return HttpResponse("仮のトップページ。ここでreturnされる文字列がTOPページに表示されてる。")
     return render(request, "kanban/index.html")
 
-@login_required
-def home(request):
-    return render(request, "kanban/home.html")
+# @login_required
+# def home(request):
+#     return render(request, "kanban/home.html")
+
+class HomeView(LoginRequiredMixin, ListView):
+    model = List
+    template_name = "kanban/home.html"
+
 
 def signup(request):
     if request.method == 'POST':
